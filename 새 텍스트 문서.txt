@@ -1,0 +1,19 @@
+
+
+npm  install -g create-react-app
+
+create-react-app management
+
+
+
+cd C:\React Project Tutorial\management
+
+
+npm install -g yarn
+
+yarn start
+
+
+
+https://github.com/imsunmook/React-Management-Tutorial.git
+
