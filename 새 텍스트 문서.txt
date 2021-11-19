@@ -17,3 +17,15 @@ yarn start
 
 https://github.com/imsunmook/React-Management-Tutorial.git
 
+
+git remote add origin https://github.com/imsunmook/React-Management-Tutorial.git
+
+git push --set-upstream origin master
+
+
+  git config --global user.email "miracleinhell247@google.com"
+  git config --global user.name "imsunmook"
+
+
+서버스타트
+node server.js
