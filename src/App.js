@@ -1,7 +1,35 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Customer from './components/Customer'
+import Customer from './components/Customer';
+
+import React from 'react';
+
+import Paper from '@mui/material/Paper';
+import Table from '@mui/material/Table';
+import TableHead from '@mui/material/TableHead';
+import TableBody from '@mui/material/TableBody';
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+
+import {withStyles}  from '@mui/styles';
+import { render } from '@testing-library/react';
+
+
+
+
+const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing * 3,
+    overflowX: "auto"
+  },
+  table: {
+    minWidth: 1080
+  }
+
+})
+
 
 const customers = [{
   'id' : 1,
@@ -28,12 +56,25 @@ const customers = [{
   'job' : 'B',
   },
 ]
-function App() {
+class App extends React.Component {
+render(){
+  const { classes } = this.props;
   return (
-    <div>
+    <Paper className={classes.root}>
+      <Table className={classes.table}>
+        <TableHead>
+          <TableRow>
+            <TableCell>a</TableCell>
+            <TableCell>b</TableCell>
+            <TableCell>c</TableCell>
+            <TableCell>d</TableCell>
+            <TableCell>e</TableCell>
+            <TableCell>f</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
 
-{
-        customers.map(c => {
+        {customers.map(c => {
           return (
             <Customer
               key={c.id}
@@ -42,17 +83,16 @@ function App() {
               name={c.name}
               birthday={c.birthday}
               gender={c.gender}
-              job={c.job}
-              
+              job={c.job}                    
               />
-
           )
-        })
+        })}
+        </TableBody>
+      </Table>
 
-      }
-
-    </div>
+    </Paper>
   );
+      }
 }
 
-export default App;
+export default withStyles(styles)(App);
